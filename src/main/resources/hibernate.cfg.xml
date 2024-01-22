@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/reservation</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="org.hibernate.jdbc=TRACE "></property>
+        <property name="jta.UserTransaction">java:comp/UserTransaction</property>
+
+        <property name="cache.use_query_cache">false</property>
+        <mapping class="Model.Reservation" />
+        <mapping class="Model.Utilisateur" />
+        <mapping class="Model.Vol" />
+        <mapping class="Model.FlightInfo" />
+        <mapping class="Model.EntityTest" />
+
+    </session-factory>
+</hibernate-configuration>
